@@ -1,12 +1,12 @@
 # cs100-final-project
 
 **Group Members:**
-`
-Crystal Feng            cfeng017@ucr.edu
 
-Brayan Montiel          bmont032@ucr.edu
+`Crystal Feng            cfeng017@ucr.edu`
 
-Sebastian Flores Leon   sflor032@ucr.edu
+`Brayan Montiel          bmont032@ucr.edu`
+
+`Sebastian Flores Leon   sflor032@ucr.edu
 `
 
 **Title of Project:** 
