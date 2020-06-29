@@ -17,7 +17,7 @@ Quiz Maker????
 
 **What app do you plan to work on?**
 
-`
+```
 The app will allow for the user to create different kinds of quizzes depending on their needs.
 
 The user will be able to input the questions themselves as well as the answers.
