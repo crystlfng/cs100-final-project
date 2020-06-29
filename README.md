@@ -1,7 +1,6 @@
 # cs100-final-project
 
 **Group Members:**
-
 `
 Crystal Feng            cfeng017@ucr.edu
 
