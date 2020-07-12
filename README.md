@@ -4,7 +4,7 @@
 
 Crystal Feng            cfeng017@ucr.edu\
 Brayan Montiel          bmont032@ucr.edu\
-Sebastian Flores Leon   sflor032@ucr.edu\
+Sebastian Flores Leon   sflor032@ucr.edu
 
 # Quiz Maker
 **Uses of application**
