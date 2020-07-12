@@ -1,50 +1,27 @@
-# cs100-final-project
+# CS100 - Final-Project
 
 **Group Members:**
-```
-Crystal Feng            cfeng017@ucr.edu
 
-Brayan Montiel          bmont032@ucr.edu
-
+Crystal Feng            cfeng017@ucr.edu\
+Brayan Montiel          bmont032@ucr.edu\
 Sebastian Flores Leon   sflor032@ucr.edu
-```
 
-**Title of Project:** 
+# Quiz Maker
+**Uses of application**
 
-```
-Quiz Maker????
-```
+The app will allow users to create different forms of quizzes.
+The Quiz Maker will prompt users on whether they want to create or take a quiz. On selecting to create, user will be given a list of options that may include; name of quiz, format of the quiz, add/remove question (i.e. multiple choice, T/F, free response), and add/remove student identifiers (i.e. SID, Name, or Class Period). On selecting to take a quiz, user will be a list of quizzes that are available (If none are found we throw a warning and return to selection screen). How the quiz will be given to user is still being thought. 
 
-**What app do you plan to work on?**
+**Why are we developing this?**
 
-```
-The app will allow for the user to create different kinds of quizzes depending on their needs.
+As students ourselves, we are always looking for new ways to improve our learning. While there are many quiz makers online, we plan to make one that is simplistic and easy to use. 
 
-The user will be able to input the questions themselves as well as the answers.
+**Tools**
 
-They can then choose to take the quiz or make more quizzes.
+* Project is developed in C++ 
+* Github is used for collaboration
+> Will add any tools that are implemented into project
 
-As of right now, we plan on allowing the user to make multiple choice questions or true or false questions.
-```
-
-**Why is it importnet or interesting?**
-
-```
-As students ourselves, we are always looking for new ways to improve our learning. 
-
-While there are many quiz makers online, we plan to make one that is simplistic and easy to use. 
-```
-
-**What language/tools/technology you plan to use?**
-
-```
-We will be coding in C++ and using this repository as a sute for collaboration.
-```
-
-**What will be the input/output of your project?**
-
-```
-The input will be taken from the user: Questions/Answers and the users choice to Take or Make quizzes. 
-
-Output: Menu and Questions stored in the program by the user.
-```
+**Input/Output**
+* Input: user input and imported quizzes
+* Output: exported quizzes, quiz to be displayed, and possibly exported answers.
