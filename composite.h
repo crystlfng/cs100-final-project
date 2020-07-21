@@ -1,11 +1,3 @@
-//
-//  composite.h
-//  cs100final
-//
-//  Created by Crystal on 7/17/20.
-//  Copyright © 2020 Crystal. All rights reserved.
-//
-
 #ifndef composite_h
 #define composite_h
 
@@ -33,9 +25,6 @@ public:
     node* n;
     int score = 0;
     Question(){};
-    virtual void printQuiz(node *current) = 0;
-    //virtual int getScore() = 0;
-    virtual void addQuestion(node *&head, node *&tail, string q, string a) = 0;
 };
 
 class MCQ: public Question{
@@ -45,25 +34,6 @@ public:
         last = NULL;
         string question = q;
         string answer  = a;
-    }
-
-    virtual void addQuestion(node *&head, node *&tail, string q, string a){ //this will add questions to a new linked list;
-        if(head == NULL){ //checks if list is empty.
-            node *temp = new node;
-            temp->question = q;
-            temp->answer = a;
-            temp->next = NULL;
-            head = temp;
-            tail = temp;
-        }
-        else{
-            node *temp = new node;
-            temp->question = q;
-            temp->answer = a;
-            temp->next = NULL;
-            last->next = temp;
-            tail  = temp;
-        }
     }
 
     virtual void printQuiz(node *current){ //will test that the quiz is working
@@ -133,24 +103,24 @@ public:
 };
 
 
-/*
-class FRQ: public Quiz{
-private :
-    vector<string> question;
-
+class FRQ: public Question{
 public:
-    FRQ(vector<string>q):Quiz(){
-        question = q;
+    FRQ(vector<string>qn,vector<string>ans, int i): Question(){
+        q = qn[i];
+        a = ans[i];
     }
-    
-    virtual void takeQuiz(){
-        for(int i = 0; i < question.size(); i++){
-            cout << question[i];
-            cout << endl;
-        }
-    }
-    
-};
-*/
 
-#endif /* composite_h */
+    virtual string print(){
+        string s = q;
+        return s;
+    }
+
+    virtual int getScore(string input){
+        if(a == input)
+            score +=1;
+
+        return score;
+    }
+
+};
+
