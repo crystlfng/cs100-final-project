@@ -1,55 +1,38 @@
-//
-//  decorator.h
-//  cs100final
-//
-//  Created by Crystal on 7/17/20.
-//  Copyright © 2020 Crystal. All rights reserved.
-//
-#include "composite.h"
+
 #ifndef decorator_h
 #define decorator_h
+#include "composite.h"
 
-/*
-class Decorator: public Quiz{
+class Decorator : public Question
+{
 protected:
-    Quiz* b;
-public:
-    Decorator() {};
+    Question* b;
+    public:
+        Decorator() {};
         
-    virtual void takeQuiz() = 0;
-    virtual double getScore() = 0;
+        virtual string print() = 0;
+        virtual int getScore(string input) = 0;
+};
+
+class Caps: public Decorator{
+public:
+    Caps(Question* input):Decorator(){
+        b = input;
+    }
+    
+    virtual string print(){
+        string s = b->print();
+        transform(s.begin(), s.end(), s.begin(), ::toupper);
+        return s;
+    }
+    
+    virtual int getScore(string input){
+        if(a == input)
+            score +=1;
+        return score;
+    }
 };
 
 
-class AllCaps: public Decorator{
-public:
-    AllCaps(Quiz* q): Decorator(){
-        b = q;
-    }
-    
-    virtual void takeQuiz(){
-        string input;
-        
-        for(auto &i : b->question)
-            for(auto &j: i)
-                j = toupper(j);
-        
-        for(int i = 0; i < b->question.size(); i++){
-            cout << b->question[i];
-            cout << b->mcqChoices[i];
-            cin >> input;
-            b->answer.push_back(input);
-            cout << endl;
-        }
-        
-    }
-    
-    virtual double getScore(){
-        return b->getScore();
-    }
-    
-};
-
-
-*/
 #endif /* decorator_h */
+

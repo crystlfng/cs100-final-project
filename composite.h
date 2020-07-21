@@ -1,11 +1,3 @@
-//
-//  composite.h
-//  cs100final
-//
-//  Created by Crystal on 7/17/20.
-//  Copyright © 2020 Crystal. All rights reserved.
-//
-
 #ifndef composite_h
 #define composite_h
 
@@ -26,8 +18,8 @@ public:
     string a;
     int score = 0;
     Question(){};
-    virtual void print() = 0;
-    virtual int getScore() = 0;
+    virtual string print() = 0;
+    virtual int getScore(string input) = 0;
 };
 
 class MCQ: public Question{
@@ -38,9 +30,10 @@ public:
         a = ans[i];
     }
     
-    virtual void print(){
-        cout << q ;
-        cout << c << endl;
+    virtual string print(){
+        string s = q;
+        s+=c;
+        return s;
     }
     
     virtual int getScore(string input){
@@ -51,24 +44,25 @@ public:
     }
     
 };
-/*
-class FRQ: public Quiz{
-private :
-    vector<string> question;
 
+class FRQ: public Question{
 public:
-    FRQ(vector<string>q):Quiz(){
-        question = q;
+    FRQ(vector<string>qn,vector<string>ans, int i): Question(){
+        q = qn[i];
+        a = ans[i];
     }
-    
-    virtual void takeQuiz(){
-        for(int i = 0; i < question.size(); i++){
-            cout << question[i];
-            cout << endl;
-        }
-    }
-    
-};
-*/
 
-#endif /* composite_h */
+    virtual string print(){
+        string s = q;
+        return s;
+    }
+
+    virtual int getScore(string input){
+        if(a == input)
+            score +=1;
+
+        return score;
+    }
+
+};
+
