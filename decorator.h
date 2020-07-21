@@ -1,7 +1,7 @@
 
 #ifndef decorator_h
 #define decorator_h
-#include "question.h"
+#include "composite.h"
 
 class Decorator : public Question
 {
