@@ -9,7 +9,7 @@
 #ifndef decorator_h
 #define decorator_h
 
-
+/*
 class Decorator: public Quiz{
 protected:
     Quiz* b;
@@ -51,5 +51,5 @@ public:
 };
 
 
-
+*/
 #endif /* decorator_h */

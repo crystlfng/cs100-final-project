@@ -19,59 +19,39 @@ using namespace std;
 
 
 
-class Quiz{
+class Question{
 public:
-    vector<string> question;
-    vector<string> mcqChoices;
-    vector<string> mcqAnswers;
-    vector<string> answer;
-    Quiz(){};
-    virtual void takeQuiz() = 0;
-    virtual double getScore() = 0;
+    string q;
+    string c;
+    string a;
+    int score = 0;
+    Question(){};
+    virtual void print() = 0;
+    virtual int getScore() = 0;
 };
 
-class MCQ: public Quiz{
-private :
-    vector<string> question;
-    vector<string> mcqChoices;
-    vector<string> mcqAnswers;
-    vector<string>answer;
+class MCQ: public Question{
 public:
-    MCQ(vector<string>q,vector<string>c, vector<string>a): Quiz(){
-        question = q;
-        mcqChoices = c;
-        mcqAnswers = a;
+    MCQ(vector<string>qn, vector<string>ch,vector<string>ans, int i): Question(){
+        q = qn[i];
+        c = ch[i];
+        a = ans[i];
     }
     
-    virtual void takeQuiz(){
-        string input;
-        
-        for(int i = 0; i < question.size(); i++){
-            cout << question[i];
-            cout << mcqChoices[i];
-            cin >> input;
-            answer.push_back(input);
-            cout << endl;
-        }
+    virtual void print(){
+        cout << q ;
+        cout << c << endl;
     }
     
-    virtual double getScore(){
-        double score = 0;
-        for (int i = 0; i < question.size(); i++){
-            if(mcqAnswers[i] == answer[i]){
-                score += 1;
-            }
-        }
-        score = score/question.size();
-        
-        score = score*100;
-        
+    virtual int getScore(string input){
+        if(a == input)
+            score +=1;
+    
         return score;
     }
-
     
 };
-
+/*
 class FRQ: public Quiz{
 private :
     vector<string> question;
@@ -89,6 +69,6 @@ public:
     }
     
 };
-
+*/
 
 #endif /* composite_h */

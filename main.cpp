@@ -17,7 +17,7 @@
 using namespace std;
 
 int main() {
-    vector<string> question = { "what color is a clear afternoon sky? \n",
+   vector<string> question = { "what color is a clear afternoon sky? \n",
                                 "what is 2+2? \n",
                                 "what class is this project for? \n",
                                 "who made this project? \n" };
@@ -28,6 +28,15 @@ int main() {
                                     "a.Sebastian L \nb.Brayan M \nc.Crystal F \nd.all of those above :) \n"};
     
     vector<string> mcqAnswers = {"a","c","b","d"};
+    string answer;
+    
+    for(int i = 0; i < question.size(); i++){
+        MCQ* temp = new MCQ(question, mcqChoices,mcqAnswers, i);
+        temp->print();
+        
+        cin >> answer;
+        temp->getScore(answer);
+    }
     
     
     /*
@@ -35,7 +44,7 @@ int main() {
         for(auto &j: i)
             j = toupper(j);
     }*/
-
+    /*
     MCQ* quiz = new MCQ(question,mcqChoices, mcqAnswers);
     
     AllCaps* caps = new AllCaps(quiz);
@@ -43,6 +52,12 @@ int main() {
     caps->takeQuiz();
     
     cout <<"Score: " << caps->getScore() << "%" << endl;
+    
+    string q;
+    
+    q = "this is a string";
+    
+    cout << q <<endl;*/
     
     return 0;
 }
