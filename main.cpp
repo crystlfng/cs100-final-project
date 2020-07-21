@@ -13,11 +13,30 @@ using namespace std;
 
 int main()
 {
+    
+    string input = "";
+    string qtype = "";
+    string decorator;
+    
+
+        cout << "choose two question types you would like\n 1)MCQ\n(2)FRQ\n(3)TF\nEnter \"12\" or \"23\" or \"13\"\n(only enter 12 for now bc we dont have tf yet): ";
+        cin >> input;
+    qtype = input;
+    
+    cout << "Choose decorator type:\n(1)All Caps\n(2)No Caps\nEnter \"1\" or \"2\": ";
+    cin >> input;
+    decorator = input;
+        
+        Factory* f = new Factory();
+        Question* test = f->parse(qtype, decorator);
+               
+        cout << test->print();
+
    
+    
+    /*
     string answer;
     
-    string qtype;
-    string decorator;
     int choice1, choice2;
     
     cout << "Choose quiz type:\n(1)MCQ\n(2)FRQ\nEnter \"1\" or \"2\": ";
@@ -40,9 +59,9 @@ int main()
     
    
         Factory* f = new Factory();
-        Question* test = f->parse(qtype, decorator);
+        Question* test = f->parse();
         
         cout << test->print();
-        
+        */
     return 0;
 }

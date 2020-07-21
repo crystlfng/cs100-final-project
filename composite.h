@@ -23,10 +23,10 @@ public:
 
 class MCQ: public Question{
 public:
-    MCQ(vector<string>qn, vector<string>ch,vector<string>ans, int i): Question(){
-        q = qn[i];
-        c = ch[i];
-        a = ans[i];
+    MCQ(string qn, string ch, string ans): Question(){
+        q = qn;
+        c = ch;
+        a = ans;
     }
     
     virtual string print(){
@@ -39,9 +39,9 @@ public:
 
 class FRQ: public Question{
 public:
-    FRQ(vector<string>qn,vector<string>ans, int i): Question(){
-        q = qn[i];
-        a = ans[i];
+    FRQ(string qn,string ans): Question(){
+        q = qn;
+        a = ans;
     }
 
     virtual string print(){
@@ -61,7 +61,7 @@ public:
     virtual string print(){
         string s= "";
         for(int i=0; i < quiz.size();i++){
-            cout << quiz[i]->print() <<endl;
+            cout << quiz[i]->print();
             cin >> answer;
             if (answer == quiz[i]->a)
                 score +=1;
