@@ -3,7 +3,7 @@
 #include <vector>
 #include <stdio.h>
 #include <ctype.h>
-#include "composite.h"
+#include "question.h"
 #include "decorator.h"
 #include "factory.h"
 
@@ -17,14 +17,6 @@ int main()
                                    "what is 2+2? \n",
                                    "what class is this project for? \n",
                                    "who made this project? \n" };
-       
-    vector<string> mcqChoices = {   "a.blue \nb.pink \nc.white \nd.red\n",
-                                       "a.5 \nb.8 \nc.4 \nd.10 \n",
-                                       "a.CS014 \nb.CS100 \nc.PHIL001 \nd.ENG001 \n",
-                                       "a.Sebastian L \nb.Brayan M \nc.Crystal F \nd.all of those above :) \n"};
-       
-    vector<string> mcqAnswers = {"a","c","b","d"};
-    
     string answer;
     
     string qtype;
