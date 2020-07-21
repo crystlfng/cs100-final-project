@@ -5,7 +5,7 @@
 #include <vector>
 #include <stdio.h>
 #include <ctype.h>
-#include "question.h"
+#include "composite.h"
 #include "decorator.h"
 
 class Question;
@@ -54,3 +54,4 @@ public:
 };
 
 #endif /* factory_h */
+
