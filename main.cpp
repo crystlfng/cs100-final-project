@@ -3,7 +3,7 @@
 #include <vector>
 #include <stdio.h>
 #include <ctype.h>
-#include "question.h"
+#include "composite.h"
 #include "decorator.h"
 #include "factory.h"
 
@@ -13,10 +13,7 @@ using namespace std;
 
 int main()
 {
-    vector<string> question = { "what color is a clear afternoon sky? \n",
-                                   "what is 2+2? \n",
-                                   "what class is this project for? \n",
-                                   "who made this project? \n" };
+   
     string answer;
     
     string qtype;
@@ -41,19 +38,11 @@ int main()
         decorator = "nocaps";
     
     
-    for(int i = 0; i < question.size(); i++){
+   
         Factory* f = new Factory();
-        Question* test = f->parse(qtype, decorator,i,question);
+        Question* test = f->parse(qtype, decorator);
         
         cout << test->print();
         
-        cout << "answer: ";
-        cin >> answer;
-        cout << endl;
-        //test->getScore(answer);
-        //cout << endl << test->printScore() << endl;
-    }
-    
-    
     return 0;
 }

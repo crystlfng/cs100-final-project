@@ -14,7 +14,11 @@ class Factory{
 public:
     Factory(){};
     
-    Question* parse(string qtype, string decorator, int i,vector<string> question){
+    Question* parse(string qtype, string decorator){
+        vector<string> question = { "what color is a clear afternoon sky? \n",
+                                          "what is 2+2? \n",
+                                          "what class is this project for? \n",
+                                          "who made this project? \n" };
           
        vector<string> mcqChoices = {   "a.blue \nb.pink \nc.white \nd.red\n",
                                           "a.5 \nb.8 \nc.4 \nd.10 \n",
@@ -23,33 +27,40 @@ public:
           
        vector<string> mcqAnswers = {"a","c","b","d"};
         
-        Question* final;
         
+        
+        Quiz* tester = new Quiz();
+        
+        for (int i =0; i < question.size(); i++){
+            
         if (qtype == "frq" && decorator == "nocaps" ){
                 FRQ* test = new FRQ(question,mcqAnswers, i);
                 
-            final = test;
+            tester->addQuestion(test);
         }
         if (qtype == "mcq" && decorator == "nocaps" ){
                 MCQ* test= new MCQ(question, mcqChoices,mcqAnswers, i);
-            final = test;
+            
+            tester->addQuestion(test);
         }
         
         
         if (qtype == "frq" && decorator == "allcaps" ){
                 FRQ* temp = new FRQ(question,mcqAnswers, i);
                 Caps* test = new Caps(temp);
-            final = test;
+           tester->addQuestion(test);
         }
         
         if (qtype == "mcq" && decorator == "allcaps" ){
 
                 MCQ* temp = new MCQ(question, mcqChoices,mcqAnswers, i);
                 Caps* test = new Caps(temp);
-             final = test;
+             tester->addQuestion(test);
             
         }
-        return final;
+        }
+        
+        return tester;
     }
 };
 

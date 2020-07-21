@@ -18,6 +18,7 @@ public:
     string a;
     int score = 0;
     Question(){};
+    virtual string print()=0;
 };
 
 class MCQ: public Question{
@@ -52,23 +53,24 @@ public:
 
 class Quiz: public Question{
 public:
-    vector<Question> quiz;
+    vector<Question*> quiz;
     int score=0;
     string answer;
     Quiz():Question(){};
     
-    virtual void print(){
-        for(int i; i < quiz.size();i++){
+    virtual string print(){
+        string s= "";
+        for(int i=0; i < quiz.size();i++){
             cout << quiz[i]->print() <<endl;
             cin >> answer;
-            if (answer == quiz[i].a)
+            if (answer == quiz[i]->a)
                 score +=1;
         }
-        
+        return s;
     }
     
     void addQuestion(Question* q){
-        quiz.add(q);
+        quiz.push_back(q);
     }
     
 };
