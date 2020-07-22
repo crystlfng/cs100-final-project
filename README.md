@@ -31,7 +31,7 @@ As students ourselves, we are always looking for new ways to improve our learnin
 
 # Class Diagram UML
 
-![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/CS100%20Final%20Project.png)
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/CS100%20Final%20Project2.png)
 # I/O Examples 
 what the user sees
 
