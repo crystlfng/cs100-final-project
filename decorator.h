@@ -62,17 +62,15 @@ class Header : public Decorator {
         }
         /* Inherited Functions */
         virtual void print() {
-            cout << subject << endl 
-                 << quizname << endl << endl 
-                 << quizdescription 
+            cout << "Quiz Name: " << quizname << endl << "Subject: " << subject << endl
+                 << "Description: " << quizdescription
                  << "\n__________________________\n" << endl;
             b->print();
             cout << "____________________________\n" << endl;
         }
         virtual int takeQuestion() {
-            cout << subject << endl << endl
-                 << quizname << endl 
-                 << quizdescription 
+            cout << "Quiz Name: " << quizname << endl << "Subject: " << subject << endl
+                 << "Description: " << quizdescription
                  << "\n__________________________\n" << endl;
             int score = b->takeQuestion();
             cout << "____________________________\n" << endl;

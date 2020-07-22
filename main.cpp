@@ -33,7 +33,7 @@ int main()
 
     //this will read the files in order to get the questions, adjust your file path accordingly.
     //Choices.txt will only be taking in MCQ in the order they appear on Questions.txt
-    ifstream qfile("/Users/crystal/CS100/cs100-final-project/Questions.txt");
+    ifstream qfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Questions.txt");
     if (!qfile) {
         cerr << "Cannot open file: " << "Questions.txt" << endl;
     } else {
@@ -44,7 +44,7 @@ int main()
     }
     qfile.close();
 
-    ifstream cfile("/Users/crystal/CS100/cs100-final-project/Choices.txt"); //adjust path
+    ifstream cfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Choices.txt"); //adjust path
     if (!cfile) {
         cerr << "Cannot open file: " << "Choices.txt" << endl;
     } else {
@@ -55,7 +55,7 @@ int main()
     }
     cfile.close();
 
-    ifstream basicIfstream("/Users/crystal/CS100/cs100-final-project/Types.txt"); //adjust path
+    ifstream basicIfstream("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Types.txt"); //adjust path
     if (!basicIfstream) {
         cerr << "Cannot open file: " << "Types.txt" << endl;
     } else {
@@ -66,7 +66,7 @@ int main()
     }
     basicIfstream.close();
 
-    ifstream afile("/Users/crystal/CS100/cs100-final-project/Answers.txt"); //adjust path
+    ifstream afile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Answers.txt"); //adjust path
     if (!afile) {
         cerr << "Cannot open file: " << "Answers.txt" << endl;
     } else {
@@ -78,15 +78,16 @@ int main()
     afile.close();
     cout << endl ;
 
+    count = questions.size();
     string input;
     string input2,input3;
     
     Factory* root = new Factory(questions,choices,answers,types);
      Question* test = root->getQuiz();
-    cout << "Quiz Subject?\nsubject: ";
-    getline(cin, input);
     cout << "Name of the Quiz?\nname: ";
     getline(cin, input2);
+    cout << "Quiz Subject?\nsubject: ";
+    getline(cin, input);
     cout << "Quiz Description?\ndescription: ";
     getline(cin, input3);
     
@@ -98,15 +99,16 @@ int main()
     while (input != "no"){
         cout << "QUIZ START\n";
         cout << "==================\n\n";
-        count = questions.size();
         score += title->takeQuestion();
         percent = (score/count)*100;
         cout << "Your score! : " << percent << "%" << endl;
-        
         cout << "\nWould you like to retake this quiz?\n(yes/no):";
         cin >> input;
         cout << endl ;
-        
-    }     
+        percent =0; //restart percent & score.
+        score =0;
+    }
+
+    cout << "YOU ARE DONE!" << endl;
     return 0;
 }
