@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "factory.h"
+#include "composite.h"
 
 using namespace std;
 
@@ -31,16 +32,19 @@ TEST(FACTORY, Basic) {
                             "MCQ"
     };
 
-    Factory* test = new Factory(question, choice, answer, type);
-    Question* returned = test->getQuiz();
+    Factory* test1 = new Factory(question, choice, answer, type);
+    Question* returned = test1->getQuiz();
 
-    // Main will be in charge of asking user if they want to add decorators
-    Question* sect = new Section(returned, "Multiple Choice Questions");
+    Question* sect = new Section(returned, "Section1");
+
+
     string desc = "This test is what we learned the past week. Please use lowercase for all answers.";
-    Question* head = new Header(sect, "Common Sense - 101", "Quiz 3", desc);
+    Question* head = new Header(test, "Common Sense - 101", "Quiz 3", desc);
+
+
 
     // Taking quiz
-    EXPECT_EQ(head->takeQuestion(), 5);
+    EXPECT_EQ(head->takeQuestion(), 15);
 }
 
 #endif //__FACTORY_TEST_H__

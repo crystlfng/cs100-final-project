@@ -78,15 +78,28 @@ int main()
     afile.close();
     cout << endl ;
 
-    string input = "";
+    string input;
+    string input2,input3;
+    
+    Factory* root = new Factory(questions,choices,answers,types);
+     Question* test = root->getQuiz();
+    cout << "Quiz Subject?\nsubject: ";
+    getline(cin, input);
+    cout << "Name of the Quiz?\nname: ";
+    getline(cin, input2);
+    cout << "Quiz Description?\ndescription: ";
+    getline(cin, input3);
+    
+    
+    Decorator* title = new Header(test, input, input2, input3);
+    
+    cout << endl << endl ;
     
     while (input != "no"){
         cout << "QUIZ START\n";
         cout << "==================\n\n";
-        count = questions.size(); //will give us the total number of questions.
-        Factory* root = new Factory(questions,choices,answers,types);
-        Question* test = root->getQuiz();
-        score += test->takeQuestion();
+        count = questions.size();
+        score += title->takeQuestion();
         percent = (score/count)*100;
         cout << "Your score! : " << percent << "%" << endl;
         
@@ -94,8 +107,6 @@ int main()
         cin >> input;
         cout << endl ;
         
-    }
-
-     
+    }     
     return 0;
 }
