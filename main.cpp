@@ -17,9 +17,8 @@ int main()
     string input = "";
     string qtype = "";
     string decorator;
-    
 
-        cout << "choose two question types you would like\n 1)MCQ\n(2)FRQ\n(3)TF\nEnter \"12\" or \"23\" or \"13\"\n(only enter 12 for now bc we dont have tf yet): ";
+        cout << "Choose three question types you would like\n (1)MCQ\n(2)FRQ\n(3)TF\nEnter \"1&2\" or \"2&3\" or \"1&3\"\n(only enter 12 for now bc we dont have T/F yet): ";
         cin >> input;
     qtype = input;
     
@@ -31,8 +30,7 @@ int main()
         Question* test = f->parse(qtype, decorator);
                
         cout << test->print();
-
-   
+        test->printScore();
     
     /*
     string answer;
