@@ -22,8 +22,7 @@ Question* parse(vector<string> questions, vector<string>
     // Checking if all vectors have correct input.
     if(questions.size()<1 && answers.size()<1 && types.size()<1) return nullptr;
     if(types[0]=="MCQ" && choices.size()<1) return nullptr;
-    if(!(questions.size()==answers.size() && types.size()==questions.size())) {cout << "Failed"<<endl;return nullptr;}
-    cout << "Works 5"<<endl;
+    if(!(questions.size()==answers.size() && types.size()==questions.size())) return nullptr;
     /* Parsing loop */
     // The counter for choices which MCQ only uses
     int j = 0;
