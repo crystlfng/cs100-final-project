@@ -33,13 +33,18 @@ class MCQ : public Question {
             a = ans;
         }
         /* Inherited Functions */
-        virtual void print() {cout << q + c;}
+        virtual void print(){
+            cout << q << endl << c << endl << "Answer: ";
+        }
+
         virtual int takeQuestion() {
             string answer;
             this->print();
             cin >> answer;
-            if (answer == a) return 1;
-            else return 0;
+            if (answer == a)
+                return 1;
+            else
+                return 0;
         }
         virtual void addQuestion(Question* q) {}
     
@@ -58,7 +63,7 @@ class FRQ: public Question {
         }
         /* Inherited Functions */
         virtual void print(){
-          cout << q;
+          cout << q << endl<< "Free Response: ";
         }
         virtual int takeQuestion() {
             string answer;
@@ -84,12 +89,11 @@ class TF: public Question {
         }
         /* Inherited Functions */
         virtual void print(){
-          cout << q;
+          cout << q << endl << "True (t)/False (f): " ;
         }
         virtual int takeQuestion() {
             string answer;
             this->print();
-            cout << "t/f: ";
             cin >> answer;
             if (answer == a) return 1;
             else return 0;
