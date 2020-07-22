@@ -26,3 +26,12 @@ As students ourselves, we are always looking for new ways to improve our learnin
 **Input/Output**
 * Input: user input and imported quizzes (.txt files)
 * Output: exported quizzes, quiz to be displayed, display user score depending on correct answers.
+
+
+
+# Class Diagram UML
+
+
+# I/O Examples
+
+
