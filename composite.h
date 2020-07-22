@@ -17,8 +17,11 @@ public:
     string c;
     string a;
     int score = 0;
+    int count = 0;
     Question(){};
     virtual string print()=0;
+    virtual void printScore() =0;
+    virtual void increaseScore() =0;
 };
 
 class MCQ: public Question{
@@ -34,7 +37,16 @@ public:
         s+=c;
         return s;
     }
-    
+
+    virtual void printScore(){
+        cout << count << " "<< score ;
+        double percent = (score/count) * 100;
+        cout << "\nYour scored a " << percent << "% " << endl;
+    }
+
+    virtual void increaseScore(){
+        score++;
+    }
 };
 
 class FRQ: public Question{
@@ -46,25 +58,59 @@ public:
 
     virtual string print(){
         string s = q;
+        cout << "Free response : " ; //will make it easier to distinguish
         return s;
     }
 
+    virtual void increaseScore() {
+        score++;
+    }
+
+    virtual void printScore(){
+        cout << count << " "<< score ;
+        double percent = (score/count) * 100;
+        cout << "\nYour scored a " << percent << "% " << endl;
+    }
+};
+
+class TF: public Question{
+public:
+    TF(string qn,string ans): Question(){
+        q = qn;
+        a = ans;
+    }
+
+    virtual string print(){
+        string s = q;
+        cout << "(t) for True/(f) for False: " ;
+        return s;
+    }
+
+    virtual void increaseScore(){
+        score++;
+    }
+
+    virtual void printScore(){
+        cout << count << " "<< score ;
+        double percent = (score/count) * 100;
+        cout << "\nYour scored a " << percent << "% " << endl;
+    }
 };
 
 class Quiz: public Question{
 public:
     vector<Question*> quiz;
-    int score=0;
     string answer;
     Quiz():Question(){};
     
     virtual string print(){
         string s= "";
         for(int i=0; i < quiz.size();i++){
+            count++;
             cout << quiz[i]->print();
             cin >> answer;
             if (answer == quiz[i]->a)
-                score +=1;
+                quiz[i]->increaseScore();
         }
         return s;
     }
@@ -72,7 +118,16 @@ public:
     void addQuestion(Question* q){
         quiz.push_back(q);
     }
-    
+
+    virtual void increaseScore(){
+        score++;
+    }
+
+    virtual void printScore(){
+        cout << count << " "<< score ;
+        double percent = (score/count) * 100;
+        cout << "\nYour scored a " << percent << "% " << endl;
+    }
 };
 
 #endif /* composite_h */

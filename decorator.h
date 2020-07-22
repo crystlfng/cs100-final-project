@@ -11,7 +11,8 @@ protected:
         Decorator() {};
         
         virtual string print() = 0;
-        virtual int getScore(string input) = 0;
+        virtual void printScore()= 0;
+        virtual void increaseScore() =0;
 };
 
 class Caps: public Decorator{
@@ -25,11 +26,15 @@ public:
         transform(s.begin(), s.end(), s.begin(), ::toupper);
         return s;
     }
-    
-    virtual int getScore(string input){
-        if(a == input)
-            score +=1;
-        return score;
+
+    virtual void increaseScore(){
+        score++;
+    }
+
+    virtual void printScore(){
+        cout << count << " "<< score ;
+        double percent = (score/count) * 100;
+        cout << "\nYour scored a " << percent << "% " << endl;
     }
 };
 
