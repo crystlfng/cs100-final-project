@@ -29,9 +29,9 @@ As students ourselves, we are always looking for new ways to improve our learnin
 # Design Patterns
 
 **Composite**\
-Quiz is a compostie of MCQs, FRQs, and TFs.
+Quiz is a compostie of MCQs, FRQs, and TFs.\
 **Decorator**\
-Allows for questions to be decorated with numbers, and quizzes to be decorated with headings.
+Allows for questions to be decorated with numbers, and quizzes to be decorated with headings.\
 **Factory**\
 Helps construct Quiz by parsing through information the user provides.
 
