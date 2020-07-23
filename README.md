@@ -33,6 +33,24 @@ As students ourselves, we are always looking for new ways to improve our learnin
 
 ![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/CS100%20Final%20Project2.png)
 # I/O Examples 
-what the user sees
+The program will firs prompt the user to enter the directory paths to the .txt files containing the quiz information.
+The program will read those .txt files and push the appropriate information to the corresponding string vectors.
+Those string vectors will then be passed into our **Factory Pattern** to make the quiz. (in the factory pattern we use one of our **decorators** to number the questions)
+>Enter Question.txt directory path: \
+>/Users/crystal/Desktop/test/test/Questions.txt\
+>10 lines read from [Questions.txt]\
+>Enter Choice.txt path: \
+>/Users/crystal/Desktop/test/test/Choices.txt\
+>3 lines read from [Choices.txt]\
+>Enter Types.txt directory path:\
+>/Users/crystal/Desktop/test/test/Types.txt\
+>10 lines read from [Types.txt]\
+>Enter Answer.txt directory path\
+>/Users/crystal/Desktop/test/test/Answers.txt\
+>10 lines read from [Answers.txt]
+
+
+The user can now enter the heading information for the quiz. This will be printed out everytime they take the test so that they can remind themselves of necessary information.
+>![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io2.png)
 
 
