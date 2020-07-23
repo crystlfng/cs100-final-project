@@ -21,7 +21,6 @@ As students ourselves, we are always looking for new ways to improve our learnin
 
 * Project is developed in C++ 
 * Github is used for collaboration
-> Will add any tools that are implemented into project
 
 **Input/Output**
 * Input: user input and imported quizzes (.txt files)
@@ -33,24 +32,26 @@ As students ourselves, we are always looking for new ways to improve our learnin
 
 ![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/CS100%20Final%20Project2.png)
 # I/O Examples 
-The program will firs prompt the user to enter the directory paths to the .txt files containing the quiz information.
+>The program will firs prompt the user to enter the directory paths to the .txt files containing the quiz information.
 The program will read those .txt files and push the appropriate information to the corresponding string vectors.
 Those string vectors will then be passed into our **Factory Pattern** to make the quiz. (in the factory pattern we use one of our **decorators** to number the questions)
->Enter Question.txt directory path: \
->/Users/crystal/Desktop/test/test/Questions.txt\
->10 lines read from [Questions.txt]\
->Enter Choice.txt path: \
->/Users/crystal/Desktop/test/test/Choices.txt\
->3 lines read from [Choices.txt]\
->Enter Types.txt directory path:\
->/Users/crystal/Desktop/test/test/Types.txt\
->10 lines read from [Types.txt]\
->Enter Answer.txt directory path\
->/Users/crystal/Desktop/test/test/Answers.txt\
->10 lines read from [Answers.txt]
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io1.png)
 
 
-The user can now enter the heading information for the quiz. This will be printed out everytime they take the test so that they can remind themselves of necessary information.
->![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io2.png)
+>The user can now enter the heading information for the quiz. This will be printed out everytime they take the test so that they can remind themselves of necessary information. This information is passed into the **Heading Decorator** to be implemeted.
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io2.png)
+
+>With the information provideed from the user the program will now print the quiz. The quiz allows for the user to answer their own questions; a mix of MCQ, FRQ, and TF (depends on what they provided in the txt files).
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io3.png)
+
+>When answering the questions, the program keeps track of whther or not you answered correctly and will print the users score according to those answers.
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io4.png)
+
+>The user can now choose to retake the quiz for a better score, in which the program will reprint the quiz and allow for a retake.
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io5.png)
+
+>If the user decides that they are satisfied, they can opt not to retake in which the program will close.
+![alt tag](https://github.com/crystlfng/cs100-final-project/blob/master/io6.png)
+
 
 
