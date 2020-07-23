@@ -29,12 +29,19 @@ int main()
     //  MCQ = "MCQ"
     //  FRQ = "FRQ"
     //  TF = "TF"
+	
+	string fileName;
 
+	cout << "Enter Question.txt directory path: "<<endl;
+	getline(cin, fileName);
 
     //this will read the files in order to get the questions, adjust your file path accordingly.
     //Choices.txt will only be taking in MCQ in the order they appear on Questions.txt
-    ifstream qfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Questions.txt");
-    if (!qfile) {
+    //ifstream qfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Questions.txt");
+   
+	ifstream qfile(fileName);
+
+     if (!qfile) {
         cerr << "Cannot open file: " << "Questions.txt" << endl;
     } else {
         for (string line; getline(qfile, line); /**/) {
@@ -44,7 +51,12 @@ int main()
     }
     qfile.close();
 
-    ifstream cfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Choices.txt"); //adjust path
+	cout << "Enter Choice.txt path: "<<endl;
+	getline(cin, fileName);
+
+    //ifstream cfile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Choices.txt"); //adjust path
+	ifstream cfile(fileName);
+
     if (!cfile) {
         cerr << "Cannot open file: " << "Choices.txt" << endl;
     } else {
@@ -55,7 +67,13 @@ int main()
     }
     cfile.close();
 
-    ifstream basicIfstream("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Types.txt"); //adjust path
+	cout << "Enter Types.txt directory path:" <<endl;
+	getline(cin, fileName);
+ 
+	ifstream basicIfstream(fileName);
+//    ifstream basicIfstream("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Types.txt"); //adjust path
+
+
     if (!basicIfstream) {
         cerr << "Cannot open file: " << "Types.txt" << endl;
     } else {
@@ -66,7 +84,13 @@ int main()
     }
     basicIfstream.close();
 
-    ifstream afile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Answers.txt"); //adjust path
+	cout << "Enter Answer.txt directory path" <<endl;
+	getline(cin, fileName);
+
+	ifstream afile(fileName);
+
+
+//    ifstream afile("/Users/brayanmontiel/CLionProjects/UCR/CS_100/CS_Project_Runner2/Answers.txt"); //adjust path
     if (!afile) {
         cerr << "Cannot open file: " << "Answers.txt" << endl;
     } else {
