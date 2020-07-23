@@ -26,7 +26,14 @@ As students ourselves, we are always looking for new ways to improve our learnin
 * Input: user input and imported quizzes (.txt files)
 * Output: exported quizzes, quiz to be displayed, display user score depending on correct answers.
 
+# Design Patterns
 
+**Composite**\
+Quiz is a compostie of MCQs, FRQs, and TFs.
+**Decorator**\
+Allows for questions to be decorated with numbers, and quizzes to be decorated with headings.
+**Factory**\
+Helps construct Quiz by parsing through information the user provides.
 
 # Class Diagram UML
 
